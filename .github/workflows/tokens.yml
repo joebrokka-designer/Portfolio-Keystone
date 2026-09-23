@@ -1,0 +1,41 @@
+# Three independent checks, so a bad rename shows every place it breaks in one PR run,
+# not just the first. Each consumer job builds with --lenient so it can still run when
+# the token graph itself is broken.
+name: tokens
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  graph:
+    name: Token graph resolves
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/validate.mjs
+      - run: node --test test/*.test.mjs
+
+  typecheck:
+    name: TypeScript consumers compile
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm install --no-audit --no-fund
+      - run: node scripts/build.mjs --lenient
+      - run: npx tsc -p examples/dashboard
+
+  css:
+    name: CSS references exist
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/build.mjs --lenient
+      - run: node scripts/lint-css-vars.mjs examples

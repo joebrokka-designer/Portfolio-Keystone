@@ -1,0 +1,15 @@
+/* A consumer stylesheet. Uses semantic and component tokens only. */
+.alert {
+  padding-inline: var(--adjoin-alert-padding-inline);
+  border: var(--adjoin-size-stroke-default) solid;
+  border-radius: var(--adjoin-radius-container);
+  font: var(--adjoin-typography-body-default);
+}
+.alert--danger {
+  background: var(--adjoin-color-background-feedback-danger);
+  border-color: var(--adjoin-alert-danger-border);
+  color: var(--adjoin-alert-danger-text);
+}
+.alert--danger .alert__icon {
+  color: var(--adjoin-color-icon-feedback-danger);
+}

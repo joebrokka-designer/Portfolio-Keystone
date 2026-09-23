@@ -1,0 +1,20 @@
+{
+  "name": "@adjoin/tokens",
+  "version": "0.1.0",
+  "description": "Adjoin design tokens: DTCG 2025.10 source, CSS + TypeScript outputs, and a CI gate for data-dense analytics UI.",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build": "node scripts/build.mjs",
+    "build:lenient": "node scripts/build.mjs --lenient",
+    "lint:css": "node scripts/lint-css-vars.mjs examples",
+    "typecheck": "tsc -p examples/dashboard",
+    "test": "node --test test/*.test.mjs",
+    "check": "npm run validate && npm run build && npm run lint:css && npm run typecheck && npm test"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "Adjoin density: comfortable. Defines space, size and typography only; never color.",
+  "space": {
+    "$type": "dimension",
+    "inset": {
+      "xs": {
+        "$value": "{scale.space.4}",
+        "$description": "Padding inside a container, size xs."
+      },
+      "sm": {
+        "$value": "{scale.space.8}",
+        "$description": "Padding inside a container, size sm."
+      },
+      "md": {
+        "$value": "{scale.space.12}",
+        "$description": "Padding inside a container, size md."
+      },
+      "lg": {
+        "$value": "{scale.space.16}",
+        "$description": "Padding inside a container, size lg."
+      }
+    },
+    "stack": {
+      "xs": {
+        "$value": "{scale.space.4}",
+        "$description": "Vertical gap between stacked siblings, size xs."
+      },
+      "sm": {
+        "$value": "{scale.space.8}",
+        "$description": "Vertical gap between stacked siblings, size sm."
+      },
+      "md": {
+        "$value": "{scale.space.16}",
+        "$description": "Vertical gap between stacked siblings, size md."
+      },
+      "lg": {
+        "$value": "{scale.space.24}",
+        "$description": "Vertical gap between stacked siblings, size lg."
+      }
+    },
+    "inline": {
+      "xs": {
+        "$value": "{scale.space.4}",
+        "$description": "Horizontal gap between siblings in a row, size xs."
+      },
+      "sm": {
+        "$value": "{scale.space.8}",
+        "$description": "Horizontal gap between siblings in a row, size sm."
+      },
+      "md": {
+        "$value": "{scale.space.12}",
+        "$description": "Horizontal gap between siblings in a row, size md."
+      },
+      "lg": {
+        "$value": "{scale.space.16}",
+        "$description": "Horizontal gap between siblings in a row, size lg."
+      }
+    }
+  },
+  "size": {
+    "$type": "dimension",
+    "control": {
+      "height": {
+        "sm": {
+          "$value": "{scale.space.28}",
+          "$description": "Height of sm controls: buttons, inputs, chips."
+        },
+        "md": {
+          "$value": "{scale.space.36}",
+          "$description": "Height of md controls: buttons, inputs, chips."
+        },
+        "lg": {
+          "$value": "{scale.space.44}",
+          "$description": "Height of lg controls: buttons, inputs, chips."
+        }
+      }
+    },
+    "row": {
+      "height": {
+        "$value": "{scale.space.40}",
+        "$description": "Height of a row in tables, lists and menus."
+      }
+    },
+    "icon": {
+      "sm": {
+        "$value": "{scale.space.16}",
+        "$description": "Icon size sm."
+      },
+      "md": {
+        "$value": "{scale.space.20}",
+        "$description": "Icon size md."
+      }
+    }
+  },
+  "typography": {
+    "$type": "typography",
+    "body": {
+      "default": {
+        "$value": {
+          "fontFamily": "{scale.font-family.sans}",
+          "fontSize": "{scale.font-size.14}",
+          "fontWeight": "{scale.font-weight.regular}",
+          "letterSpacing": "{scale.letter-spacing.none}",
+          "lineHeight": "{scale.line-height.normal}"
+        },
+        "$description": "Body copy and data values in prose."
+      },
+      "small": {
+        "$value": {
+          "fontFamily": "{scale.font-family.sans}",
+          "fontSize": "{scale.font-size.13}",
+          "fontWeight": "{scale.font-weight.regular}",
+          "letterSpacing": "{scale.letter-spacing.none}",
+          "lineHeight": "{scale.line-height.normal}"
+        },
+        "$description": "Secondary copy and dense captions."
+      }
+    },
+    "label": {
+      "default": {
+        "$value": {
+          "fontFamily": "{scale.font-family.sans}",
+          "fontSize": "{scale.font-size.13}",
+          "fontWeight": "{scale.font-weight.medium}",
+          "letterSpacing": "{scale.letter-spacing.none}",
+          "lineHeight": "{scale.line-height.snug}"
+        },
+        "$description": "Control labels, table headers, legend labels."
+      },
+      "small": {
+        "$value": {
+          "fontFamily": "{scale.font-family.sans}",
+          "fontSize": "{scale.font-size.12}",
+          "fontWeight": "{scale.font-weight.medium}",
+          "letterSpacing": "{scale.letter-spacing.none}",
+          "lineHeight": "{scale.line-height.snug}"
+        },
+        "$description": "Axis ticks and compact metadata."
+      }
+    },
+    "heading": {
+      "1": {
+        "$value": {
+          "fontFamily": "{scale.font-family.sans}",
+          "fontSize": "{scale.font-size.28}",
+          "fontWeight": "{scale.font-weight.semibold}",
+          "letterSpacing": "{scale.letter-spacing.none}",
+          "lineHeight": "{scale.line-height.tight}"
+        },
+        "$description": "Page title. One per view."
+      },
+      "2": {
+        "$value": {
+          "fontFamily": "{scale.font-family.sans}",
+          "fontSize": "{scale.font-size.24}",
+          "fontWeight": "{scale.font-weight.semibold}",
+          "letterSpacing": "{scale.letter-spacing.none}",
+          "lineHeight": "{scale.line-height.tight}"
+        },
+        "$description": "Section title."
+      },
+      "3": {
+        "$value": {
+          "fontFamily": "{scale.font-family.sans}",
+          "fontSize": "{scale.font-size.18}",
+          "fontWeight": "{scale.font-weight.semibold}",
+          "letterSpacing": "{scale.letter-spacing.none}",
+          "lineHeight": "{scale.line-height.tight}"
+        },
+        "$description": "Card and panel title."
+      }
+    },
+    "numeric": {
+      "table": {
+        "$value": {
+          "fontFamily": "{scale.font-family.sans}",
+          "fontSize": "{scale.font-size.14}",
+          "fontWeight": "{scale.font-weight.regular}",
+          "letterSpacing": "{scale.letter-spacing.none}",
+          "lineHeight": "{scale.line-height.normal}"
+        },
+        "$description": "Numbers in table cells. Tabular figures so columns align.",
+        "$extensions": {
+          "com.adjoin.css": {
+            "fontFeatureSettings": "\"tnum\" 1"
+          }
+        }
+      },
+      "kpi": {
+        "$value": {
+          "fontFamily": "{scale.font-family.sans}",
+          "fontSize": "{scale.font-size.32}",
+          "fontWeight": "{scale.font-weight.semibold}",
+          "letterSpacing": "{scale.letter-spacing.none}",
+          "lineHeight": "{scale.line-height.tight}"
+        },
+        "$description": "The headline number of a metric card. Tabular figures.",
+        "$extensions": {
+          "com.adjoin.css": {
+            "fontFeatureSettings": "\"tnum\" 1"
+          }
+        }
+      }
+    }
+  }
+}

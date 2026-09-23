@@ -1,0 +1,49 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "Adjoin semantic tokens that do not change with theme or density.",
+  "radius": {
+    "$type": "dimension",
+    "control": {
+      "$value": "{scale.radius.4}",
+      "$description": "Corner radius of buttons, inputs and chips."
+    },
+    "container": {
+      "$value": "{scale.radius.8}",
+      "$description": "Corner radius of cards, panels and popovers."
+    },
+    "mark": {
+      "$value": "{scale.radius.2}",
+      "$description": "Corner radius of bars and columns in charts."
+    }
+  },
+  "size": {
+    "stroke": {
+      "$type": "dimension",
+      "default": {
+        "$value": "{scale.stroke.1}",
+        "$description": "Borders and axis lines."
+      },
+      "emphasis": {
+        "$value": "{scale.stroke.2}",
+        "$description": "Focus rings and selected borders."
+      },
+      "data": {
+        "$value": "{scale.stroke.1-5}",
+        "$description": "Line-chart series strokes."
+      }
+    }
+  },
+  "opacity": {
+    "$type": "number",
+    "data": {
+      "dimmed": {
+        "$value": "{scale.opacity.30}",
+        "$description": "Non-highlighted marks while another mark is hovered."
+      }
+    },
+    "disabled": {
+      "$value": "{scale.opacity.40}",
+      "$description": "Disabled controls."
+    }
+  }
+}

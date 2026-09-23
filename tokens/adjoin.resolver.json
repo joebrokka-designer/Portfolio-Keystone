@@ -1,0 +1,37 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/resolver.json",
+  "name": "Adjoin",
+  "version": "2025.10",
+  "description": "Adjoin design tokens. Two orthogonal modifiers: theme touches only color, density touches only space, size and typography.",
+  "sets": {
+    "primitives": { "sources": [{ "$ref": "primitives.tokens.json" }] },
+    "semantic-static": { "sources": [{ "$ref": "semantic.static.tokens.json" }] },
+    "components": { "sources": [{ "$ref": "components.tokens.json" }] }
+  },
+  "modifiers": {
+    "theme": {
+      "description": "Color scheme.",
+      "contexts": {
+        "light": [{ "$ref": "theme/light.tokens.json" }],
+        "dark": [{ "$ref": "theme/dark.tokens.json" }]
+      },
+      "default": "light"
+    },
+    "density": {
+      "description": "Information density. Compact for dense analysis, spacious for presentation and wall displays.",
+      "contexts": {
+        "compact": [{ "$ref": "density/compact.tokens.json" }],
+        "comfortable": [{ "$ref": "density/comfortable.tokens.json" }],
+        "spacious": [{ "$ref": "density/spacious.tokens.json" }]
+      },
+      "default": "comfortable"
+    }
+  },
+  "resolutionOrder": [
+    { "$ref": "#/sets/primitives" },
+    { "$ref": "#/sets/semantic-static" },
+    { "$ref": "#/sets/components" },
+    { "$ref": "#/modifiers/theme" },
+    { "$ref": "#/modifiers/density" }
+  ]
+}

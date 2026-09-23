@@ -1,0 +1,453 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "Adjoin theme: dark. Defines color tokens only.",
+  "color": {
+    "background": {
+      "surface": {
+        "page": {
+          "$value": "{palette.neutral.950}",
+          "$description": "App canvas behind all content. Not for cards; use surface.default."
+        },
+        "default": {
+          "$value": "{palette.neutral.900}",
+          "$description": "Cards, panels and chart containers."
+        },
+        "raised": {
+          "$value": "{palette.neutral.800}",
+          "$description": "Popovers, menus and dropdowns that float above cards."
+        },
+        "sunken": {
+          "$value": "{palette.neutral.950}",
+          "$description": "Wells, table headers and inactive chips set into a card."
+        },
+        "hover": {
+          "$value": "{palette.neutral.800}",
+          "$description": "Background of a hovered row or list item."
+        },
+        "inverse": {
+          "$value": "{palette.neutral.100}",
+          "$description": "Tooltips. Pair with color.text.inverse."
+        },
+        "overlay": {
+          "$value": "{palette.alpha.black-60}",
+          "$description": "Scrim behind modal dialogs."
+        }
+      },
+      "action": {
+        "primary": {
+          "$root": {
+            "$value": "{palette.blue.500}",
+            "$description": "Resting fill for the single main action in a view."
+          },
+          "hover": {
+            "$value": "{palette.blue.400}",
+            "$description": "Hovered fill for the single main action in a view."
+          },
+          "pressed": {
+            "$value": "{palette.blue.300}",
+            "$description": "Pressed fill for the single main action in a view."
+          }
+        },
+        "secondary": {
+          "$root": {
+            "$value": "{palette.alpha.transparent}",
+            "$description": "Resting fill for supporting actions next to a primary action."
+          },
+          "hover": {
+            "$value": "{palette.neutral.800}",
+            "$description": "Hovered fill for supporting actions next to a primary action."
+          },
+          "pressed": {
+            "$value": "{palette.neutral.700}",
+            "$description": "Pressed fill for supporting actions next to a primary action."
+          }
+        },
+        "danger": {
+          "$root": {
+            "$value": "{palette.flag.red.base}",
+            "$description": "Resting fill for destructive actions such as delete or revoke."
+          },
+          "hover": {
+            "$value": "{palette.flag.red.bright}",
+            "$description": "Hovered fill for destructive actions such as delete or revoke."
+          },
+          "pressed": {
+            "$value": "{palette.flag.red.shade}",
+            "$description": "Pressed fill for destructive actions such as delete or revoke."
+          }
+        }
+      },
+      "feedback": {
+        "danger": {
+          "$root": {
+            "$value": "{palette.flag.red.tint}",
+            "$description": "Fill of a danger banner or toast: something failed or was blocked. System status only, never data."
+          },
+          "emphasis": {
+            "$value": "{palette.flag.red.base}",
+            "$description": "Solid danger badge fill."
+          }
+        },
+        "warning": {
+          "$root": {
+            "$value": "{palette.flag.yellow.tint}",
+            "$description": "Fill of a warning banner or toast: something needs attention soon. System status only, never data."
+          },
+          "emphasis": {
+            "$value": "{palette.flag.yellow.base}",
+            "$description": "Solid warning badge fill."
+          }
+        },
+        "success": {
+          "$root": {
+            "$value": "{palette.flag.green.tint}",
+            "$description": "Fill of a success banner or toast: an operation completed. System status only, never data."
+          },
+          "emphasis": {
+            "$value": "{palette.flag.green.base}",
+            "$description": "Solid success badge fill."
+          }
+        },
+        "info": {
+          "$root": {
+            "$value": "{palette.blue.950}",
+            "$description": "Fill of an info banner: neutral system information."
+          },
+          "emphasis": {
+            "$value": "{palette.blue.500}",
+            "$description": "Solid info badge fill."
+          }
+        }
+      },
+      "insight": {
+        "$root": {
+          "$value": "{palette.purple.950}",
+          "$description": "Fill of an insight callout: a finding worth attention. Not for system status."
+        },
+        "emphasis": {
+          "$value": "{palette.purple.500}",
+          "$description": "Solid insight badge fill."
+        }
+      },
+      "selection": {
+        "$value": "{palette.blue.950}",
+        "$description": "Selected rows, active filter chips and chart brush ranges."
+      }
+    },
+    "text": {
+      "default": {
+        "$value": "{palette.neutral.50}",
+        "$description": "Body text and data values."
+      },
+      "subtle": {
+        "$value": "{palette.neutral.400}",
+        "$description": "Labels, captions and axis text. Not for body copy."
+      },
+      "disabled": {
+        "$value": "{palette.neutral.600}",
+        "$description": "Text of unavailable controls only."
+      },
+      "inverse": {
+        "$value": "{palette.neutral.900}",
+        "$description": "Text on color.background.surface.inverse."
+      },
+      "link": {
+        "$value": "{palette.blue.300}",
+        "$description": "Inline links in prose."
+      },
+      "action": {
+        "primary": {
+          "$value": "{palette.neutral.950}",
+          "$description": "Label text on the primary action fill."
+        },
+        "secondary": {
+          "$value": "{palette.neutral.50}",
+          "$description": "Label text on the secondary action fill."
+        },
+        "danger": {
+          "$value": "{palette.white}",
+          "$description": "Label text on the danger action fill."
+        }
+      },
+      "feedback": {
+        "danger": {
+          "$root": {
+            "$value": "{color.text.default}",
+            "$description": "Text inside a danger banner. Neutral on purpose; the icon and border carry the flag."
+          },
+          "on-emphasis": {
+            "$value": "{palette.white}",
+            "$description": "Text on the solid danger badge fill."
+          }
+        },
+        "warning": {
+          "$root": {
+            "$value": "{color.text.default}",
+            "$description": "Text inside a warning banner. Neutral on purpose; the icon and border carry the flag."
+          },
+          "on-emphasis": {
+            "$value": "{palette.neutral.950}",
+            "$description": "Text on the solid warning badge fill."
+          }
+        },
+        "success": {
+          "$root": {
+            "$value": "{color.text.default}",
+            "$description": "Text inside a success banner. Neutral on purpose; the icon and border carry the flag."
+          },
+          "on-emphasis": {
+            "$value": "{palette.neutral.950}",
+            "$description": "Text on the solid success badge fill."
+          }
+        },
+        "info": {
+          "$root": {
+            "$value": "{color.text.default}",
+            "$description": "Text inside an info banner."
+          },
+          "on-emphasis": {
+            "$value": "{palette.neutral.950}",
+            "$description": "Text on the solid info badge fill."
+          }
+        }
+      },
+      "insight": {
+        "$root": {
+          "$value": "{palette.purple.200}",
+          "$description": "Text on the insight callout fill."
+        },
+        "on-emphasis": {
+          "$value": "{palette.neutral.950}",
+          "$description": "Text on the solid insight badge."
+        }
+      },
+      "delta": {
+        "increase": {
+          "$value": "{color.text.default}",
+          "$description": "Value went up. Direction is carried by the arrow and sign, never by color."
+        },
+        "decrease": {
+          "$value": "{color.text.default}",
+          "$description": "Value went down. Direction is carried by the arrow and sign, never by color."
+        },
+        "unchanged": {
+          "$value": "{color.text.subtle}",
+          "$description": "No change."
+        }
+      }
+    },
+    "border": {
+      "subtle": {
+        "$value": "{palette.neutral.800}",
+        "$description": "Gridlines and row dividers."
+      },
+      "default": {
+        "$value": "{palette.neutral.700}",
+        "$description": "Input, card and axis-line borders."
+      },
+      "strong": {
+        "$value": "{palette.neutral.500}",
+        "$description": "Emphasized dividers."
+      },
+      "action": {
+        "secondary": {
+          "$value": "{palette.neutral.600}",
+          "$description": "Outline of secondary actions."
+        }
+      },
+      "feedback": {
+        "danger": {
+          "$value": "{palette.flag.red.base}",
+          "$description": "Edge of a danger banner."
+        },
+        "warning": {
+          "$value": "{palette.flag.yellow.base}",
+          "$description": "Edge of a warning banner."
+        },
+        "success": {
+          "$value": "{palette.flag.green.base}",
+          "$description": "Edge of a success banner."
+        },
+        "info": {
+          "$value": "{palette.blue.800}",
+          "$description": "Edge of an info banner."
+        }
+      },
+      "insight": {
+        "$value": "{palette.purple.800}",
+        "$description": "Edge of an insight callout."
+      },
+      "focus": {
+        "$value": "{palette.blue.400}",
+        "$description": "Keyboard focus outline on every interactive element."
+      },
+      "selection": {
+        "$value": "{palette.blue.400}",
+        "$description": "Edge of a selection."
+      }
+    },
+    "icon": {
+      "feedback": {
+        "danger": {
+          "$value": "{palette.flag.red.base}",
+          "$description": "Status glyph for danger."
+        },
+        "warning": {
+          "$value": "{palette.flag.yellow.base}",
+          "$description": "Status glyph for warning."
+        },
+        "success": {
+          "$value": "{palette.flag.green.base}",
+          "$description": "Status glyph for success."
+        },
+        "info": {
+          "$value": "{palette.blue.400}",
+          "$description": "Info glyph."
+        }
+      },
+      "insight": {
+        "$value": "{palette.purple.400}",
+        "$description": "Insight glyph."
+      },
+      "delta": {
+        "increase": {
+          "$value": "{palette.neutral.400}",
+          "$description": "Arrow for a value that rose."
+        },
+        "decrease": {
+          "$value": "{palette.neutral.400}",
+          "$description": "Arrow for a value that fell."
+        },
+        "unchanged": {
+          "$value": "{palette.neutral.600}",
+          "$description": "Flat marker for no change."
+        }
+      }
+    },
+    "mark": {
+      "categorical": {
+        "1": {
+          "$value": "{palette.chart.blue.100}",
+          "$description": "Series 1 in charts with categorical data. Meaning is only 'different from the other series'."
+        },
+        "2": {
+          "$value": "{palette.chart.amber.100}",
+          "$description": "Series 2 in charts with categorical data. Meaning is only 'different from the other series'."
+        },
+        "3": {
+          "$value": "{palette.chart.magenta.100}",
+          "$description": "Series 3 in charts with categorical data. Meaning is only 'different from the other series'."
+        },
+        "4": {
+          "$value": "{palette.chart.green.100}",
+          "$description": "Series 4 in charts with categorical data. Meaning is only 'different from the other series'."
+        },
+        "5": {
+          "$value": "{palette.chart.red.100}",
+          "$description": "Series 5 in charts with categorical data. Meaning is only 'different from the other series'."
+        },
+        "6": {
+          "$value": "{palette.chart.violet.100}",
+          "$description": "Series 6 in charts with categorical data. Meaning is only 'different from the other series'."
+        },
+        "other": {
+          "$value": "{palette.neutral.500}",
+          "$description": "Bucket for categories beyond slot 6."
+        },
+        "muted": {
+          "$value": "{palette.neutral.700}",
+          "$description": "Every series except the highlighted one, during hover or focus."
+        }
+      },
+      "sequential": {
+        "1": {
+          "$value": "{palette.chart.blue.900}",
+          "$description": "Sequential scale step 1 of 5; 1 is the lowest value and sits closest to the surface."
+        },
+        "2": {
+          "$value": "{palette.chart.blue.700}",
+          "$description": "Sequential scale step 2 of 5; 1 is the lowest value and sits closest to the surface."
+        },
+        "3": {
+          "$value": "{palette.chart.blue.500}",
+          "$description": "Sequential scale step 3 of 5; 1 is the lowest value and sits closest to the surface."
+        },
+        "4": {
+          "$value": "{palette.chart.blue.300}",
+          "$description": "Sequential scale step 4 of 5; 1 is the lowest value and sits closest to the surface."
+        },
+        "5": {
+          "$value": "{palette.chart.blue.100}",
+          "$description": "Sequential scale step 5 of 5; 1 is the lowest value and sits closest to the surface."
+        }
+      },
+      "diverging": {
+        "below-3": {
+          "$value": "{palette.chart.amber.100}",
+          "$description": "Diverging scale: distance from a midpoint (magnitude), not good or bad."
+        },
+        "below-2": {
+          "$value": "{palette.chart.amber.500}",
+          "$description": "Diverging scale: distance from a midpoint (magnitude), not good or bad."
+        },
+        "below-1": {
+          "$value": "{palette.chart.amber.900}",
+          "$description": "Diverging scale: distance from a midpoint (magnitude), not good or bad."
+        },
+        "midpoint": {
+          "$value": "{palette.neutral.800}",
+          "$description": "Diverging scale: distance from a midpoint (magnitude), not good or bad."
+        },
+        "above-1": {
+          "$value": "{palette.chart.blue.900}",
+          "$description": "Diverging scale: distance from a midpoint (magnitude), not good or bad."
+        },
+        "above-2": {
+          "$value": "{palette.chart.blue.500}",
+          "$description": "Diverging scale: distance from a midpoint (magnitude), not good or bad."
+        },
+        "above-3": {
+          "$value": "{palette.chart.blue.100}",
+          "$description": "Diverging scale: distance from a midpoint (magnitude), not good or bad."
+        }
+      },
+      "insight": {
+        "$value": "{palette.purple.400}",
+        "$description": "The mark an insight is about: an anomaly point or highlighted series."
+      },
+      "target": {
+        "met": {
+          "$value": "{palette.flag.green.base}",
+          "$description": "Value meets its goal or SLA."
+        },
+        "at-risk": {
+          "$value": "{palette.flag.yellow.base}",
+          "$description": "Value is within warning range of its goal. Always pair with an icon or outline."
+        },
+        "missed": {
+          "$value": "{palette.flag.red.base}",
+          "$description": "Value breaches its goal: an alert. Always pair with an icon or outline."
+        }
+      },
+      "reference": {
+        "target": {
+          "$value": "{palette.neutral.300}",
+          "$description": "Goal line on a chart."
+        },
+        "average": {
+          "$value": "{palette.neutral.500}",
+          "$description": "Average or baseline line on a chart."
+        }
+      },
+      "annotation": {
+        "$value": "{palette.neutral.300}",
+        "$description": "Event markers and callouts on a chart."
+      },
+      "missing": {
+        "$value": "{palette.neutral.800}",
+        "$description": "Null heatmap cells and gaps in a series."
+      }
+    },
+    "$type": "color"
+  }
+}
