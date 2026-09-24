@@ -14,10 +14,15 @@
     "lint:css": "node scripts/lint-css-vars.mjs examples",
     "typecheck": "tsc -p examples/dashboard",
     "test": "node --test test/*.test.mjs",
-    "check": "npm run validate && npm run build && npm run lint:css && npm run typecheck && npm test",
-    "learn": "node scripts/build.mjs > /dev/null && tsc -p learn"
+    "check": "npm run validate && npm run build && npm run lint:css && npm run typecheck && npm run typecheck:components && npm test",
+    "learn": "node scripts/build.mjs > /dev/null && tsc -p learn",
+    "typecheck:components": "tsc -p src"
   },
   "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "typescript": "^5.6.0"
   }
 }
