@@ -6,27 +6,20 @@
 
 import { cssVar } from "../dist/index";
 
-// STEP 1: list the three directions, using the same pattern as `Tone` in lesson 2.
-// Delete the // at the start of the next line and replace ___ with the three words, separated by |
-// export type Direction = ___;
+// The three directions, using the same pattern as `Tone` in lesson 2.
+export type Direction = "increase" | "decrease" | "unchanged";
 
-// STEP 2: fill in the blanks so each color is built from the direction.
-// Delete the // at the start of the next five lines, then replace each ___ with  ${direction}
-// export function deltaColors(direction: Direction) {
-//   return {
-//     text: cssVar(`color.text.delta.___`),
-//     icon: cssVar(`color.icon.delta.___`),
-//   };
-// }
+// Each color is built from the direction.
+export function deltaColors(direction: Direction) {
+  return {
+    text: cssVar(`color.text.delta.${direction}`),
+    icon: cssVar(`color.icon.delta.${direction}`),
+  };
+}
 
-// STEP 3: one example that should work. Delete the // on the next line.
-// export const good = deltaColors("increase");
+// One example that should work.
+export const good = deltaColors("increase");
 
-// STEP 4: agents often write "up" and "down". Prove that fails: delete the // on the next two lines.
-// // @ts-expect-error: the direction is "increase", not "up"
-// export const bad = deltaColors("up");
-
-// STEP 5 (a small puzzle): add a `border` line inside deltaColors, just like `text` and `icon`:
-//     border: cssVar(`color.border.delta.${direction}`),
-// Run `npm run learn` and read the error. What is TypeScript telling you about your tokens?
-// Paste the error to Claude, then take the line back out.
+// Agents often write "up" and "down". Prove that fails.
+// @ts-expect-error: the direction is "increase", not "up"
+export const bad = deltaColors("up");
