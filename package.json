@@ -15,7 +15,7 @@
     "typecheck": "tsc -p examples/dashboard",
     "test": "node --test test/*.test.mjs",
     "check": "npm run validate && npm run build && npm run lint:css && npm run typecheck && npm test",
-    "learn": "tsc -p learn"
+    "learn": "node scripts/build.mjs > /dev/null && tsc -p learn"
   },
   "devDependencies": {
     "typescript": "^5.6.0"
