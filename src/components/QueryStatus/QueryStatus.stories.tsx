@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { fn } from "storybook/test";
 import { toCount, toFraction, toMeasure } from "../../foundations/brands";
 import { QueryStatus } from "./QueryStatus";
 
@@ -21,7 +22,10 @@ export const RunningWithProgress: Story = {
 
 export const Succeeded: Story = { args: { status: "succeeded", rowCount: toCount(1204), durationMs: toMeasure(380) } };
 
-export const FailedRetryable: Story = { name: "Failed, can retry", args: { status: "failed", message: "The warehouse timed out", retryable: true } };
+export const FailedRetryable: Story = {
+  name: "Failed, can retry",
+  args: { status: "failed", message: "The warehouse timed out", retryable: true, onRetry: fn() },
+};
 export const FailedFinal: Story = { name: "Failed, can't retry", args: { status: "failed", message: "You don't have access to this dataset", retryable: false } };
 
 export const Cancelled: Story = { args: { status: "cancelled", cancelledBy: "user" } };

@@ -23,8 +23,9 @@ import { dot, fill, styles, type Tone } from "./QueryStatus.styles";
  *
  * Usage:
  * - Always show it for queries that can take longer than a second, so a blank chart is never a mystery.
- * - Use `failed` with `retryable: true` only when trying again could work (a timeout, a busy warehouse),
- *   and `retryable: false` when it can't (a permission error). The UI offers "Try again" only for the first.
+ * - Use `failed` with `retryable: true` only when trying again could work (a timeout, a busy warehouse).
+ *   That path requires `onRetry`, and the UI shows a Retry button that calls it.
+ *   `retryable: false` has no `onRetry`: the failure can't be tried again (a permission error).
  * - `cancelled` is not a failure: say who stopped it, and don't use the danger color.
  */
 export type QueryStatusProps =
@@ -32,7 +33,8 @@ export type QueryStatusProps =
   | { status: "running"; startedAt: Date; progress?: Fraction }
   // rowCount is a Count (lesson 4) and durationMs is a Measure, not plain numbers.
   | { status: "succeeded"; rowCount: Count; durationMs: Measure }
-  | { status: "failed"; message: string; retryable: boolean }
+  | { status: "failed"; message: string; retryable: true; onRetry: () => void }
+  | { status: "failed"; message: string; retryable: false }
   | { status: "cancelled"; cancelledBy: "user" | "timeout" }
   ;
 
@@ -56,7 +58,14 @@ export function QueryStatus(props: QueryStatusProps) {
       return <Line tone="success" text={`${formatRows(props.rowCount)} in ${formatDuration(props.durationMs)}`} />;
 
     case "failed":
-      return <Line tone="danger" text={props.retryable ? `${props.message}. Try again.` : props.message} />;
+      if (props.retryable) {
+        return (
+          <Line tone="danger" text={props.message}>
+            <button type="button" style={styles.retry} onClick={props.onRetry}>Try again</button>
+          </Line>
+        );
+      }
+      return <Line tone="danger" text={props.message} />;
 
     case "cancelled":
       return <Line tone="neutral" text={props.cancelledBy === "user" ? "Cancelled" : "Stopped: took too long"} />;

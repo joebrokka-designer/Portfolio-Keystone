@@ -29,6 +29,16 @@ export const styles = {
     background: cssVar("color.background.surface.sunken"),
     overflow: "hidden",
   },
+  retry: {
+    ...typography("typography.label.small"),
+    color: cssVar("color.text.action.secondary"),
+    background: cssVar("color.background.action.secondary"),
+    border: `${cssVar("size.stroke.default")} solid ${cssVar("color.border.action.secondary")}`,
+    borderRadius: cssVar("radius.control"),
+    paddingInline: cssVar("space.inset.sm"),
+    height: cssVar("size.control.height.sm"),
+    cursor: "pointer",
+  },
 } satisfies Record<string, CSSProperties>;
 
 export const dot = (tone: Tone): CSSProperties => ({
