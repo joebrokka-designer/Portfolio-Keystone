@@ -30,13 +30,10 @@ import { dot, fill, styles, type Tone } from "./QueryStatus.styles";
 export type QueryStatusProps =
   | { status: "idle" }
   | { status: "running"; startedAt: Date; progress?: Fraction }
-  // STEP 1: succeeded. Delete the // at the start of the next line.
-  //   Notice rowCount is a Count (lesson 4) and durationMs is a Measure, not plain numbers.
-  // | { status: "succeeded"; rowCount: Count; durationMs: Measure }
-
-  // STEP 3: failed. Copy your "failed" line from learn/01-your-turn.ts and paste it here.
-
-  // STEP 5: cancelled. Copy your "cancelled" line from learn/01-your-turn.ts and paste it here.
+  // rowCount is a Count (lesson 4) and durationMs is a Measure, not plain numbers.
+  | { status: "succeeded"; rowCount: Count; durationMs: Measure }
+  | { status: "failed"; message: string; retryable: boolean }
+  | { status: "cancelled"; cancelledBy: "user" | "timeout" }
   ;
 
 // ---------------------------------------------------------------------------
@@ -55,21 +52,14 @@ export function QueryStatus(props: QueryStatusProps) {
         </Line>
       );
 
-    // STEP 2: after STEP 1, delete the // at the start of the next two lines.
-    //   It shows "1,204 rows in 0.4 s". formatRows and formatDuration are at the bottom of this file.
-    // case "succeeded":
-    //   return <Line tone="success" text={`${formatRows(props.rowCount)} in ${formatDuration(props.durationMs)}`} />;
+    case "succeeded":
+      return <Line tone="success" text={`${formatRows(props.rowCount)} in ${formatDuration(props.durationMs)}`} />;
 
-    // STEP 4: after STEP 3, delete the // on the next three lines, then replace ___ with the right tone.
-    //   The tones are: "neutral", "info", "success", "danger". Which one means "something went wrong"?
-    // case "failed":
-    //   return <Line tone=___ text={props.retryable ? `${props.message}. Try again.` : props.message} />;
+    case "failed":
+      return <Line tone="danger" text={props.retryable ? `${props.message}. Try again.` : props.message} />;
 
-    // STEP 6: after STEP 5, write this case yourself. Copy the pattern above.
-    //   - Use the "neutral" tone: a cancelled query isn't an error.
-    //   - For the text: if props.cancelledBy is "user", show "Cancelled". Otherwise show "Stopped: took too long".
-    //     Hint: the failed case above uses  something ? "if yes" : "if no". So does this one, with
-    //     props.cancelledBy === "user"  as the something.
+    case "cancelled":
+      return <Line tone="neutral" text={props.cancelledBy === "user" ? "Cancelled" : "Stopped: took too long"} />;
 
     default:
       return assertNever(props);
