@@ -6,26 +6,17 @@
 
 import type { TypographyToken } from "../dist/index";
 
-// STEP 1: finish the object. Replace each ___ with a typography token from the list above,
-// in quotes. Pick by meaning: which one would you use for axis labels? For the chart title?
-// Delete the // at the start of the next six lines first.
-// const chartText = {
-//   title: ___,
-//   axisLabel: ___,
-//   legend: ___,
-//   tooltipValue: ___,
-// } satisfies Record<string, TypographyToken>;
+// Pick by meaning: axis ticks are small labels, the chart title is a heading.
+const chartText = {
+  title: "typography.heading.3",
+  axisLabel: "typography.label.small",
+  legend: "typography.label.default",
+  tooltipValue: "typography.numeric.table",
+} satisfies Record<string, TypographyToken>;
 
-// STEP 2: this should work, because `title` is in your object. Delete the //.
-// export const titleFont = chartText.title;
+// `title` is in the object, so this name is remembered.
+export const titleFont = chartText.title;
 
-// STEP 3: agents often call it "axisLabels" with an s. Prove that fails: delete the // on both lines.
-// // @ts-expect-error: the name is axisLabel, not axisLabels
-// export const wrongName = chartText.axisLabels;
-
-// STEP 4: now misspell one of your tokens on purpose (for example "typography.lable.small")
-// and run `npm run learn`. Read the error, then fix the spelling.
-
-// STEP 5 (think about it): put a color token in, like  legend: "color.text.subtle",
-// and run it. Why is it good that a *color* is rejected here, even though it's spelled right?
-// Then put your typography token back.
+// Agents often call it "axisLabels" with an s. Prove that fails.
+// @ts-expect-error: the name is axisLabel, not axisLabels
+export const wrongName = chartText.axisLabels;
