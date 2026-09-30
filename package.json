@@ -11,14 +11,15 @@
     "validate": "node scripts/validate.mjs",
     "build": "node scripts/build.mjs",
     "build:lenient": "node scripts/build.mjs --lenient",
-    "lint:css": "node scripts/lint-css-vars.mjs examples",
+    "lint:css": "node scripts/lint-css-vars.mjs examples src",
     "typecheck": "tsc -p examples/dashboard",
     "test": "node --test test/*.test.mjs",
     "check": "npm run validate && npm run build && npm run lint:css && npm run typecheck && npm run typecheck:components && npm test",
     "learn": "node scripts/build.mjs > /dev/null && tsc -p learn",
     "typecheck:components": "tsc -p src",
     "storybook": "node scripts/build.mjs > /dev/null && storybook dev -p 6006 --no-open",
-    "build-storybook": "node scripts/build.mjs > /dev/null && storybook build"
+    "build-storybook": "node scripts/build.mjs > /dev/null && storybook build",
+    "baseline:count": "node scripts/baseline-count.mjs"
   },
   "devDependencies": {
     "@storybook/react-vite": "10.6",
