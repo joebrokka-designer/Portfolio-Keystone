@@ -29,6 +29,7 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - run: node scripts/build.mjs --lenient
       - run: npx tsc -p examples/dashboard
+      - run: npx tsc -p src
 
   css:
     name: CSS references exist
@@ -38,4 +39,4 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - run: node scripts/build.mjs --lenient
-      - run: node scripts/lint-css-vars.mjs examples
+      - run: npm run lint:css
